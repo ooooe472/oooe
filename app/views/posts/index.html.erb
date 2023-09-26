@@ -1,0 +1,27 @@
+<div class="serch"> 
+    <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索する'  %>
+    <% end %>
+    </div>
+    
+
+<div class="yasai">
+<p><% @posts.each do |t| %></p>
+  <div class="yasaigazou">
+        <%= link_to post_path(t.id) do %>
+          <%= image_tag t.image_url, size: "250x200", class:"yasaigazou" if t.image? %>
+          <% end %>
+          </div>
+      <% end %>
+    </div>
+
+    
+    <% @posts.each do |t| %>
+     
+      <%= t.meet %>
+      <%= render_with_hashtags(t.hashbody) %>
+   
+<% end %>
+
+  
