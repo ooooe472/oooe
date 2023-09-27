@@ -62,3 +62,9 @@ footer {
   position: fixed;
   justify-content: flex-end;
 }
+
+.name {
+    background: linear-gradient(transparent 60%, yellow 30%);
+    width: 80px;
+
+  }

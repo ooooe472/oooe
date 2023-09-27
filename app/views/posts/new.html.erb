@@ -1,15 +1,14 @@
-<div class="new">
 <div class="newupload">
 <h1>新規投稿する</h1>
 </div>
 <div class="what">
-<%= form_with(model: @post, url: posts_path, local: true) do |f| %>
-                
 
-  <div class="comment">
-<h2><label for="meet_商品名">投稿者コメント</label></h2>
-  <input size="50x3"% type="text" name="meet[comment]" id="meet_comment"></br>
-</div>
+  <%= form_for @post do |f| %>
+    <div class="field">
+    <h2>  <%= f.label :投稿者コメント %></h2>
+      <%= f.text_field :meet, :size => 40 %>
+    </div>
+    
 
 <h2><label for="hashtag">ハッシュタグ</label></h2>
 <%= f.text_area :hashbody, size:"50x3" %>
@@ -34,7 +33,7 @@
 
 <div class="mapping">
 <h2>農園の場所</h2>
-
+</div>
 <input id="address" type="textbox" value="GeekSalon">
 <input type="button" value="検索" onclick="codeAddress()">
 
@@ -104,6 +103,3 @@ function codeAddress(){
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3Em58DpQary4q4c7aoCbcTgQ-wui0sn0&callback=initMap" async defer></script>
 
-</div>
- </div>
-</div>
