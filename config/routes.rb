@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
 root 'posts#toppage'
 
-
+get 'maps/index'
 resources :maps, only: [:index]
 
 end
